@@ -1,0 +1,33 @@
+name: contact_permission
+description: A Flutter package to ask for contact permisision
+version: 0.1.0+1
+
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+  flutter: ">=3.7.1"
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        default_package: contact_permission_android
+      ios:
+        default_package: contact_permission_ios
+
+dependencies:
+  flutter:
+    sdk: flutter
+  contact_permission_android:
+    path: ../contact_permission_android
+  contact_permission_ios:
+    path: ../contact_permission_ios
+  contact_permission_platform_interface:
+    path: ../contact_permission_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^0.3.0
+  plugin_platform_interface: ^2.0.0
+  very_good_analysis: ^4.0.0
