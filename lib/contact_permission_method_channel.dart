@@ -10,8 +10,15 @@ class MethodChannelContactPermission extends ContactPermissionPlatform {
   final methodChannel = const MethodChannel('nonstopio_contact_permission');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<bool> isPermissionGranted() async {
+    final version =
+        await methodChannel.invokeMethod<bool>('isPermissionGranted');
+    return version ?? false;
+  }
+
+  @override
+  Future<bool> requestPermission() async {
+    final version = await methodChannel.invokeMethod<bool>('requestPermission');
+    return version ?? false;
   }
 }
